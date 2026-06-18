@@ -1457,7 +1457,7 @@ vec3 col=vec3(0.04,0.18,0.30)*noise;gl_FragColor=vec4(col,noise);}
           Как узнать, есть ли на мне порча?
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
-        <div class="faq-a">Пройдите наш онлайн-тест выше или обратитесь за бесплатной первичной диагностикой. Признаки: постоянная усталость, неудачи, болезни без причины, конфликты в семье.</div>
+        <div class="faq-a">Признаки: постоянная усталость, неудачи, болезни без причины, конфликты в семье. <a href="#" onclick="event.preventDefault();document.getElementById('quizPopup').classList.add('open');" style="color:var(--cyan);text-decoration:underline;font-weight:600;">Пройдите онлайн-тест прямо сейчас →</a></div>
       </div>
       <div class="faq-item" data-anim="right" data-delay="3">
         <button class="faq-q" type="button" onclick="toggleFaq(this)">
