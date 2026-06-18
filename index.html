@@ -1803,6 +1803,8 @@ function quizAnswer(a){
   const gallery=document.getElementById('orbitGallery');
   if(!ring||!gallery)return;
   const cards=[...ring.querySelectorAll('.orbit-card')];
+  // shuffle
+  for(let i=cards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));ring.appendChild(cards[j]);[cards[i],cards[j]]=[cards[j],cards[i]];}
   const layout=()=>{
     const w=window.innerWidth;
     let r=174,cw=152,ch=230;
