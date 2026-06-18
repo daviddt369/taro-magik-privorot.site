@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taro-magik-privorot.site/sitemap.xml
