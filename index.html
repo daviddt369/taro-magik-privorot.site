@@ -672,8 +672,13 @@ canvas#neuro{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:n
 .vcar-play:hover{transform:translate(-50%,-50%) scale(1.1);}
 .vcar-play.hidden{opacity:0;pointer-events:none;}
 .vcar-label{text-align:center;}
-.vcar-label-badge{display:inline-block;padding:6px 18px;border-radius:20px;
-  font-size:14px;font-weight:600;color:var(--text);}
+.vcar-label-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 22px;border-radius:24px;
+  font-size:16px;font-weight:600;color:var(--text);cursor:default;
+  transition:transform .3s cubic-bezier(0.23,1,0.32,1),box-shadow .3s;}
+.vcar-label-badge:hover{transform:scale(1.07);}
+.vcar-label-badge .lbl-emoji{font-size:28px;line-height:1;display:inline-block;
+  transition:transform .4s cubic-bezier(0.23,1,0.32,1);}
+.vcar-label-badge:hover .lbl-emoji{transform:scale(1.25) rotate(-8deg);}
 .video-placeholder{background:linear-gradient(135deg,var(--bg-1),var(--bg-2));aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:var(--muted);font-size:13px;}
 .video-play-icon{width:72px;height:72px;border-radius:50%;background:rgba(201,168,76,.12);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:28px;}
 
@@ -880,7 +885,7 @@ vec3 col=vec3(0.04,0.18,0.30)*noise;gl_FragColor=vec4(col,noise);}
 
     <!-- ТЕКСТ СВЕРХУ -->
     <div class="vcar-label" data-anim="up" style="margin-bottom:20px;">
-      <div class="vcar-label-badge" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);">🤍 Светлая магия</div>
+      <div class="vcar-label-badge" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);"><span class="lbl-emoji">🤍</span> Светлая магия</div>
       <p class="lead" style="font-size:14px;margin:10px 0 0;">Работа через молитву, защиту, очищение и святые места. Помогает восстановить силы, убрать негатив и вернуть внутреннее спокойствие.</p>
     </div>
 
@@ -916,7 +921,7 @@ vec3 col=vec3(0.04,0.18,0.30)*noise;gl_FragColor=vec4(col,noise);}
 
     <!-- ТЕКСТ СНИЗУ -->
     <div class="vcar-label" data-anim="up" style="margin-top:20px;">
-      <div class="vcar-label-badge" style="background:rgba(88,96,204,.15);border:1px solid rgba(88,96,204,.35);">🖤 Тёмная магия</div>
+      <div class="vcar-label-badge" style="background:rgba(88,96,204,.15);border:1px solid rgba(88,96,204,.35);"><span class="lbl-emoji">🖤</span> Тёмная магия</div>
       <p class="lead" style="font-size:14px;margin:10px 0 0;">Сильная ритуальная работа для сложных ситуаций: закрытие врагов, отвороты, привороты, снятие порчи и жёсткая защита.</p>
     </div>
   </div>
