@@ -789,9 +789,9 @@ vec3 col=vec3(0.04,0.18,0.30)*noise;gl_FragColor=vec4(col,noise);}
     <button class="popup-close" id="popupClose">&#x2715;</button>
     <h2 style="font-family:var(--fh);font-size:20px;margin-bottom:6px;">У Вас есть вопрос?</h2>
     <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Я могу быстро Вам помочь, свяжитесь со мной.</p>
-    <form onsubmit="return false;">
-      <div class="form-g"><textarea class="ftextarea" placeholder="Напишите тут.." style="height:70px;"></textarea></div>
-      <div class="form-g"><input type="tel" class="finput" placeholder="Введите номер"></div>
+    <form onsubmit="sendPopupToTelegram(event)">
+      <div class="form-g"><textarea class="ftextarea" id="popupMsg" placeholder="Напишите тут.." style="height:70px;"></textarea></div>
+      <div class="form-g"><input type="tel" class="finput" id="popupTel" placeholder="Введите номер"></div>
       <button class="btn btn-primary" style="width:100%;" type="submit">Отправить</button>
     </form>
     <div class="popup-modal-btns">
@@ -1915,6 +1915,13 @@ function sendToTelegram(e){
   e.preventDefault();
   const msg=document.getElementById('cfMsg')?document.getElementById('cfMsg').value:'';
   const tel=document.getElementById('cfTel')?document.getElementById('cfTel').value:'';
+  const text='Здравствуйте! Хочу записаться на консультацию.'+(msg?'\n\n'+msg:'')+(tel?'\nТелефон: '+tel:'');
+  window.open('https://t.me/+77079907636?text='+encodeURIComponent(text),'_blank');
+}
+function sendPopupToTelegram(e){
+  e.preventDefault();
+  const msg=document.getElementById('popupMsg')?document.getElementById('popupMsg').value:'';
+  const tel=document.getElementById('popupTel')?document.getElementById('popupTel').value:'';
   const text='Здравствуйте! Хочу записаться на консультацию.'+(msg?'\n\n'+msg:'')+(tel?'\nТелефон: '+tel:'');
   window.open('https://t.me/+77079907636?text='+encodeURIComponent(text),'_blank');
 }
